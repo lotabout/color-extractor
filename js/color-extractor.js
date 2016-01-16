@@ -15,8 +15,10 @@ function analyse(img) {
     quant.sample(img);
     var pal = quant.palette(true);
     var hist = {};
+    var indices = [];
     for (var i = 0, len = pal.length; i < len; i++) {
         hist[i] = 0;
+        indices.push(i);
     }
 
     //show the result
@@ -34,15 +36,21 @@ function analyse(img) {
         hist[i] = hist[i]*100/ total;
     }
 
+    // sort for indices (reverse order)
+    indices.sort(function(a, b) {
+        return hist[a] < hist[b] ? 1 : (hist[a] > hist[b] ? -1 : 0);
+    });
+
     var div = document.createElement('div');
     div.classList.add("statistics");
 
-    for (var i = 0, len = pal.length; i < len; i++) {
+    for (var i = 0, len = indices.length; i < len; i++) {
+        var idx = indices[i];
         text = '<div class="wrapper">';
-        text += '<div class="color" style="background:' + tuple_to_RGB(pal[i]) + '"></div>';
-        text += '<span class="color-hash">' + tuple_to_hash(pal[i]) + '</span>';
-        text += '<span class="color-text">' + tuple_to_RGB(pal[i]) + '</span>';
-        text += '<span class="percentage">' + hist[i].toFixed(2) + '%</span>';
+        text += '<div class="color" style="background:' + tuple_to_RGB(pal[idx]) + '"></div>';
+        text += '<span class="color-hash">' + tuple_to_hash(pal[idx]) + '</span>';
+        text += '<span class="color-text">' + tuple_to_RGB(pal[idx]) + '</span>';
+        text += '<span class="percentage">' + hist[idx].toFixed(2) + '%</span>';
         text += '</div>';
         div.innerHTML += text;
     }
