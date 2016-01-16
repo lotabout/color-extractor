@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+.statistics {
+    display: table;
+    border-collapse: collapse;
+}
+.wrapper {
+    display: table-row;
+}
+.color {
+    width: 10em;
+    height: 2em;
+}
+.color, .color-hash, .color-text, .percentage {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 1em;
+    border: 1px solid #CCC;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+        </style>
+    </head>
+    <body>
+        <div id="input-div">
+            Input the image
+            <input type="file" multiple id="input">
+        </div>
+        <div id="results">
+        </div>
+        <script src="js/rgbquant.js"></script>
+        <script src="js/color-extractor.js"></script>
+    </body>
+</html>
