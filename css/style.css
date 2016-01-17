@@ -1,0 +1,24 @@
+.statistics {
+    display: table;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+.wrapper {
+    display: table-row;
+}
+.color {
+    width: 10em;
+    height: 2em;
+}
+.color, .color-hash, .color-text, .percentage {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 1em;
+    border: 1px solid #CCC;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+img {
+    box-shadow: 0 0 3px 1px rgba(0,0,0,.5);
+    max-width: 800px;
+}
