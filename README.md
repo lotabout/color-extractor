@@ -3,6 +3,9 @@ image? Well, this is the tool that you need.
 
 This tool is just an HTML and corresponding JS files. No servers are needed.
 
+Or just open [Color Extractor](http://lotabout.me/color-extractor/) for a
+demo. Not fancy, but work.
+
 # About
 Color-extractor is first inspired by the palette of dirbbble. However dribbble
 do not show the percentage of a color that is used in the image. Which I think
