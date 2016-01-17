@@ -104,6 +104,11 @@ function handleFiles() {
     var files = this.files;
 
     // clean the results area
+    var result = config.results;
+    while (result.firstChild) {
+        result.removeChild(result.firstChild);
+    }
+
     for (var i = 0, len = files.length; i < len; i++) {
         extract(files[i]);
     }
